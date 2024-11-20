@@ -1,30 +1,32 @@
-import { useEffect, useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
-import { SkillCardsContainer } from './components/skills/SkillCardsContainer';
+import { createBrowserRouter, NavLink, RouterProvider } from 'react-router-dom';
+
+import { SkillPage } from './components/pages/SkillPage';
+import { SkillListPage } from './components/pages/SkillListPage';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <div>Hello world
+      <nav>
+        <NavLink to="/skills">Liste des compétences</NavLink>
+      </nav>
+    </div>
+  },
+  {
+    path: '/skills',
+    element: <SkillListPage />
+  },
+  {
+    path: '/skills/:id',
+    element: <SkillPage />
+  }
+])
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/skills')
-    .then(async (response) => {
-      const resp = await response.json()
-      setData(resp);
-    } )
-    .catch((error) => console.error('Erreur: ', error))
-  }, []);
-
-  console.log(data)
-  return (
-    <div className='my-3'>
-      <h1>Liste des compétences :</h1>
-      <SkillCardsContainer skills={data}/>
-    </div>
-  )
-
-
+  return <RouterProvider router={router}/>
 }
+
+
 
 export default App

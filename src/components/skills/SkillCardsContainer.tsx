@@ -3,11 +3,10 @@ import { SkillCard } from "./SkillCard"
 
 /**
  * @param {JSON} skills
- * @returns 
+ * @returns cards container
  */
 export function SkillCardsContainer({skills}): ReactElement{
     const cards = []
-    console.log(skills)
     if(skills){
       if(skills.length > 1){
         for(let skill of skills){
