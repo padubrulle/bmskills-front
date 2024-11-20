@@ -11,9 +11,10 @@ import { ReactElement } from "react"
 export function SkillCard({skill}): ReactElement{
     return <div className="card">
         <div className="">
-            {skill.img_url ? <img src={skill.img_url}/> : <img src="https://placehold.co/300x300"/>}
+            <div className='card-img'>
+                {skill.img_url ? <img src={skill.img_url}/> : <img src="https://placehold.co/300x300"/>}
+            </div>
             <h4><b>{skill.name}</b></h4>
-            <p>{skill.description}</p>
             <p>Prix: {skill.base_price}€</p>
         </div>
   </div>

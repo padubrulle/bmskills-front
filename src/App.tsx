@@ -9,8 +9,10 @@ function App() {
 
   useEffect(() => {
     fetch('http://localhost:5000/skills')
-    .then((response) => response.json())
-    .then((data) => setData(data))
+    .then(async (response) => {
+      const resp = await response.json()
+      setData(resp);
+    } )
     .catch((error) => console.error('Erreur: ', error))
   }, []);
 
@@ -21,6 +23,8 @@ function App() {
       <SkillCardsContainer skills={data}/>
     </div>
   )
+
+
 }
 
 export default App
