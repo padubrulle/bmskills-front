@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { SkillCard } from "../skills/SkillCard";
+import { SkillCard } from "../components/skills/SkillCard";
 import { useEffect, useState } from "react";
 
 /**

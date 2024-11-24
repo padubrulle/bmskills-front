@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SkillCardsContainer } from "../skills/SkillCardsContainer";
+import { SkillCardsContainer } from "../components/skills/SkillCardsContainer";
 
 export function SkillListPage(){
     const [data, setData] = useState(null);
