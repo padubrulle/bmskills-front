@@ -38,7 +38,7 @@ export function AdminAddSkill() {
                 category_id: skill.category_id
             })
         }
-        fetch('http://localhost:5000/skills', requestOptions)
+        fetch('http://localhost:5000/skill', requestOptions)
         .then(async (response) => console.log(await response.json()))
     }
 

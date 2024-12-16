@@ -4,22 +4,23 @@ import { SkillPage } from './views/SkillPage';
 import { SkillListPage } from './views/SkillListPage';
 import { AdminLoginPage } from './views/AdminLoginPage';
 import { AdminAddSkill } from './views/admin/addskill/AdminAddSkill';
+import AdminDashboard from './views/admin/dashboard/AdminDashboard';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <div>Hello world
       <nav>
-        <NavLink to="/skills">Liste des compétences</NavLink>
+        <NavLink to="/skill/all">Liste des compétences</NavLink>
       </nav>
     </div>
   },
   {
-    path: '/skills',
+    path: '/skill/all',
     element: <SkillListPage />
   },
   {
-    path: '/skills/:id',
+    path: '/skill/:id',
     element: <SkillPage />
   },
   {
@@ -27,8 +28,12 @@ const router = createBrowserRouter([
     element: <AdminLoginPage />
   },
   {
-    path: '/admin/skills/add',
+    path: '/admin/skill/add',
     element: <AdminAddSkill />
+  },
+  {
+    path: '/admin/dashboard',
+    element: <AdminDashboard />
   }
 ])
 

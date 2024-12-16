@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { SkillCard } from "../components/skills/SkillCard";
+import { SkillCard } from "../components/skill/SkillCard";
 import { useEffect, useState } from "react";
 
 /**
@@ -11,7 +11,7 @@ export function SkillPage() {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/skills/${id}`)
+        fetch(`http://localhost:5000/skill/${id}`)
         .then(async (response) => {
             const resp = await response.json()
             setData(resp);

@@ -1,0 +1,12 @@
+.menu-links{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    background-color: whitesmoke;
+}
+
+.menu-links>a{
+    margin: 10px;
+    
+}

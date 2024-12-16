@@ -1,5 +1,6 @@
 import { ReactElement } from "react"
 import { SkillCard } from "./SkillCard"
+import '../style/_skills.css'
 
 /**
  * @param {JSON} skills
