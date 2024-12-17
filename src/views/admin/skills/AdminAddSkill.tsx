@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FormInput } from "../../../components/common/FormInput";
 import { FormTextArea } from "../../../components/common/FormTextArea";
 import { SelectElement } from "../../../components/common/SelectElement";
+import { AdminNavbar } from "../../../components/navbar/admin/navbar";
 
 
 export function AdminAddSkill() {
@@ -47,13 +48,18 @@ export function AdminAddSkill() {
         setSkill(skill => ({...skill, ...updatedValue }));
     }
 
-    return <form onSubmit={handleSubmit}>
-        <h1>Ajouter un nouveau skill</h1>
-        <FormInput fieldName={"skillname"} text={"Skill name"} type="text" required={true} onChange={(event) => handleChange(event, 'name')}/>
-        <FormTextArea fieldName={"skilldesc"} text={"Skill description"} onChange={(event) => handleChange(event, 'description')}/>
-        <FormInput fieldName={"skillprice"} text={"Skill base price"} type="text" onChange={(event) => handleChange(event, 'base_price')}/>
-        <FormInput fieldName={"imgurl"} text={"Skill image url"} type="text" onChange={(event) => handleChange(event, 'img_url')}/>
-        <SelectElement list={categories} name={categories} value={skill.category_id} onChange={(event) => handleChange(event, 'category_id')}/>
-        <button type="submit">Ajouter</button>
-    </form>
+    return <>
+        <AdminNavbar />
+        <div>
+            <form onSubmit={handleSubmit}>
+                <h1 style={{color: "white"}}>Ajouter un nouveau skill</h1>
+                <FormInput fieldName={"skillname"} text={"Skill name"} type="text" required={true} onChange={(event) => handleChange(event, 'name')}/>
+                <FormTextArea fieldName={"skilldesc"} text={"Skill description"} onChange={(event) => handleChange(event, 'description')}/>
+                <FormInput fieldName={"skillprice"} text={"Skill base price"} type="text" onChange={(event) => handleChange(event, 'base_price')}/>
+                <FormInput fieldName={"imgurl"} text={"Skill image url"} type="text" onChange={(event) => handleChange(event, 'img_url')}/>
+                <SelectElement list={categories} name={categories} value={skill.category_id} onChange={(event) => handleChange(event, 'category_id')}/>
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+    </>
 }

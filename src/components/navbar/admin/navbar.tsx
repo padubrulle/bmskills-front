@@ -2,9 +2,9 @@ import { ReactElement } from "react";
 import { Navbar } from "../navbar";
 
 const LINKS = [
-    {name: "Skills", url:"/admin/skill"},
-    {name: "Recruiter", url:"/admin/recruiter"},
-    {name: "Talent", url:"/admin/talent"},
+    {name: "Skills", url:"/admin/skill/add"},
+    {name: "Recruiter", url:"/admin/recruiter/add"},
+    {name: "Talent", url:"/admin/talent/add"},
 ]
 
 export function AdminNavbar(): ReactElement{
