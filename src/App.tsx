@@ -1,7 +1,7 @@
 import { createBrowserRouter, NavLink, RouterProvider } from 'react-router-dom';
 
-import { SkillPage } from './views/SkillPage';
-import { SkillListPage } from './views/SkillListPage';
+import { SkillPage } from './views/skills/SkillPage';
+import { SkillListPage } from './views/skills/SkillListPage';
 import { AdminLoginPage } from './views/AdminLoginPage';
 import { AdminAddSkill } from './views/admin/skills/AdminAddSkill';
 import { AdminAddTalent } from './views/admin/talents/AdminAddTalent';
@@ -11,7 +11,8 @@ import { AdminAddRecruiter } from './views/admin/recruiters/AdminAddRecruiter';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>Hello world
+    element: <div>
+      <h1>Hello world</h1>
       <nav>
         <NavLink to="/skill/all">Liste des compétences</NavLink>
       </nav>
