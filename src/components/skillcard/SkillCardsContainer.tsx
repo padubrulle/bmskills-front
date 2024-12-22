@@ -9,7 +9,7 @@ import '../style/_skills.css'
 export function SkillCardsContainer({skills}): ReactElement{
     const cards = []
     if(skills){
-      if(skills.length > 1){
+      if(skills.length > 0){
         for(let skill of skills){
           cards.push(<SkillCard skill={skill} key={skill.name} />)
         }

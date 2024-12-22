@@ -25,11 +25,12 @@ export function SkillListPage(){
       if (categories.length > 0 && data.length > 0) {
         const combinedSkills = categories.map((cat) => {
           const filteredSkills = data.filter((skill) => skill.category_id === cat.id);
-          if(filteredSkills.length>0){
-            return <SkillByCategoryContainer key={cat.id} category={cat} skills={filteredSkills} />;
-          } else {
+
+          if(filteredSkills.length===0){
             return <EmptySkillByCategoryContainer key={cat.id} category={cat} />
           }
+          console.log("filtered",filteredSkills)
+          return <SkillByCategoryContainer key={cat.id} category={cat} skills={filteredSkills} />;
         });
         setSkillsByCategory(combinedSkills);
       }
