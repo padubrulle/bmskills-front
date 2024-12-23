@@ -3,6 +3,22 @@ import { SkillByCategoryContainer } from "../../components/category/SkillByCateg
 import { EmptySkillByCategoryContainer } from "../../components/category/EmptySkillByCategoryContainer";
 
 export function SkillListPage(){
+    const observer = new IntersectionObserver((entries) => {
+      for(const entry of entries){
+        if(entry.isIntersecting){
+          if(!entry.target.classList.contains('already-loaded')){
+            entry.target.animate([
+              {transform: 'translateY(100px)', opacity: 0},
+              {transform: 'translateY(0px)', opacity: 1},
+            ], {
+                duration: 1000
+            }),
+            entry.target.classList.add('already-loaded')
+          }
+        }
+      }
+    })
+      
     const [data, setData] = useState([]);
     const [categories, setCategories] = useState([]);
     const [skillsByCategory, setSkillsByCategory] = useState([]);
@@ -29,7 +45,6 @@ export function SkillListPage(){
           if(filteredSkills.length===0){
             return <EmptySkillByCategoryContainer key={cat.id} category={cat} />
           }
-          console.log("filtered",filteredSkills)
           return <SkillByCategoryContainer key={cat.id} category={cat} skills={filteredSkills} />;
         });
         setSkillsByCategory(combinedSkills);
@@ -39,9 +54,16 @@ export function SkillListPage(){
     if(!data || !categories){
       return <div>Chargement...</div>
     }
+
+
+    const skillscont = document.querySelectorAll('.skill-container')!
+    
+    skillscont.forEach((element) => {
+        observer.observe(element)
+    })
   
     return (
-      <div className=''>
+      <div className='slp'>
         <h1>Liste des compétences :</h1>
         {skillsByCategory}
       </div>
