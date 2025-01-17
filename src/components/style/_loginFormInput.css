@@ -2,6 +2,7 @@
     font-size: 1.25rem;
     position: relative;
     --primary: #2196f3;
+    padding-top: 10%;
 }
 .textarea-group {
     font-size: 1.25rem;
@@ -33,7 +34,7 @@
 
 .label {
     position: absolute;
-    top: 1rem;
+    top: 2.6rem;
     left: 1rem;
     color: #d4d4d4;
     pointer-events: none;

@@ -1,4 +1,4 @@
-import '../style/_admininput.css'
+import '../style/_loginFormInput.css'
 /**
  * @param {string} placeholder 
  */

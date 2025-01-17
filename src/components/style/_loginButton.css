@@ -1,4 +1,7 @@
 button {
+    margin: auto;
     background-color: #2196f3;
     color: white;
+    margin-top: 10%; 
+    width:100%;
 }
