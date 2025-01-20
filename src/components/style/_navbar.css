@@ -2,11 +2,11 @@
     position: relative;
     display: flex;
     justify-content: space-evenly;
-    width: 100vw;
-    background-color: whitesmoke;
+    width: 100%;
+    margin: auto;
+    /* background-color: whitesmoke; */
 }
 
 .menu-links>a{
     margin: 10px;
-    
 }
