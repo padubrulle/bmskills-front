@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { AdminButtonLogin } from "../admin/AdminButton";
-import { AdminInput } from "../admin/AdminInput";
-import '../components/style/_admin.css'
+import { LoginButton } from "../../admin/LoginButton";
+import { LoginFormInput } from "../../admin/LoginFormInput";
+import { LoginFormTitle } from "../../components/common/LoginFormTitle";
+import '../../components/style/_login.css'
+
 
 export function AdminLoginPage() {
     // function loginCheck(username, password){
@@ -23,14 +25,14 @@ export function AdminLoginPage() {
     //     onSubmitLogin()
     // }
 
-    return <form>
-        <AdminInput fieldName="email" type="text" text="Email" />
-        <div style={{paddingTop: "10%"}}>
-        <AdminInput fieldName="password" type="password" text="password" />
-        </div>
-        <div style={{paddingTop: "10%"}}>
-        <AdminButtonLogin />
-        </div>
-    </form>
+    return <div className="adminForm">
+        <form>
+            <LoginFormTitle title="Connexion Admin" />
+            <LoginFormInput fieldName="email" type="text" text="Email" />
+            <LoginFormInput fieldName="password" type="password" text="password" />
+            <LoginButton />
+        </form>
+    </div>
+    
 }
 
