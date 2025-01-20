@@ -1,13 +1,13 @@
 import { createBrowserRouter, NavLink, RouterProvider } from 'react-router-dom';
 
 import { SkillPage } from './views/skills/SkillPage';
-import { SkillListPage } from './views/skills/SkillListPage';
 import { AdminLoginPage } from './views/login/AdminLoginPage';
 import { AdminAddSkill } from './views/admin/skills/AdminAddSkill';
 import { AdminAddTalent } from './views/admin/talents/AdminAddTalent';
 import AdminDashboard from './views/admin/dashboard/AdminDashboard';
 import { AdminAddRecruiter } from './views/admin/recruiters/AdminAddRecruiter';
 import { UserLoginPage } from './views/login/UserLoginPage';
+import { SkillLayout } from './views/skills/SkillLayout';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/skill/all',
-    element: <SkillListPage />
+    element: <SkillLayout />
   },
   {
     path: '/skill/:id',
