@@ -62,10 +62,9 @@ export function SkillListPage(){
         observer.observe(element)
     })
   
-    return (
-      <div className='slp'>
+    return <div className='slp'>
         <h1>Liste des compétences :</h1>
         {skillsByCategory}
       </div>
-    )
+    
   }
