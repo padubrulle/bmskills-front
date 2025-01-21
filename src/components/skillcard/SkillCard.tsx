@@ -13,7 +13,7 @@ export function SkillCard({skill}): ReactElement{
     return  <div className="card">
         <NavLink to={`/skill/${skill.id}`}>
             <div className='card-img'>
-                {skill.img_url ? <img src={skill.img_url}/> : <img src="https://placehold.co/300x300"/>}
+                {skill.img_url ? <img src={skill.img_url}/> : <img src="https://placehold.co/400x400"/>}
             </div>
             <div className='card-infos'>
                 <h4 className='skill-name'><b>{skill.name}</b></h4>

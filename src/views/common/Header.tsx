@@ -12,9 +12,15 @@ import '../../components/style/_navbarmain.css'
 export function Header(){
 
     return <header className='navbar-main'>
-        <HomeButton />
-        <SearchBar />
-        <Navbar links={CONNEXIONLINKS}/>
-        <CartButton />
+        <div className='nav-left'>
+            <HomeButton />
+        </div>
+        <div className='nav-fill'>
+            <SearchBar />
+        </div>
+        <div className='nav-right'>
+            <Navbar links={CONNEXIONLINKS}/>
+            <CartButton />
+        </div>
     </header>
 }
