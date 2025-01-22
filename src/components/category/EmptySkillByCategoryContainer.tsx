@@ -1,8 +1,13 @@
+import '../style/_skills.css'
 
 export function EmptySkillByCategoryContainer({category}){
 
     return <div className="skill-container">
-        <h2>{category.name} : </h2>
-        <p>Sorry, no skills in this category at the moment</p>
+        <details>
+            <summary>
+                <div className="category-name">{category.name} :</div>
+            </summary>
+            <p>Sorry, no skills in this category at the moment</p>
+        </details>
     </div>
 }

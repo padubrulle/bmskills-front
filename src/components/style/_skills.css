@@ -1,5 +1,19 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 /*
+    Categories
+*/
+.category-name{
+    display: contents;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+details{
+    display: inline-block;
+    width: fit-content;
+}
+
+/*
     Card container
 */
 .card {
