@@ -7,25 +7,22 @@ import { AdminAddTalent } from './views/admin/talents/AdminAddTalent';
 import AdminDashboard from './views/admin/dashboard/AdminDashboard';
 import { AdminAddRecruiter } from './views/admin/recruiters/AdminAddRecruiter';
 import { UserLoginPage } from './views/login/UserLoginPage';
-import { SkillLayout } from './views/skills/SkillLayout';
+import { MainLayout } from './views/main/MainLayout';
+import { SkillListPage } from './views/skills/SkillListPage';
+import { HomePage } from './views/Homepage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>
-      <h1>Hello world</h1>
-      <nav>
-        <NavLink to="/skill/all">Liste des compétences</NavLink>
-      </nav>
-    </div>
+    element: <MainLayout pageContent={<HomePage />} />
   },
   {
     path: '/skill/all',
-    element: <SkillLayout />
+    element: <MainLayout pageContent={<SkillListPage />} />
   },
   {
     path: '/skill/:id',
-    element: <SkillPage />
+    element: <MainLayout pageContent={<SkillPage />} />
   },
   {
     path: '/adminlogin',
@@ -33,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'login',
-    element: <UserLoginPage />,
+    element: <MainLayout pageContent={<UserLoginPage />} />,
   },
   {
     path: '/admin/skill/add',
@@ -54,8 +51,11 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={router}/>
+  return <RouterProvider router={router} />
+  
 }
+
+
 
 
 
