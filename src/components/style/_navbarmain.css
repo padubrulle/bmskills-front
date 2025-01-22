@@ -1,4 +1,31 @@
 .navbar-main{
     display: flex;
     float: none;
+    background-color: #131921;
+}
+
+.nav-left{
+    display: flex;
+    width: 200px;
+    height: auto;
+    align-content: center;
+    align-items: center;
+}
+
+.nav-fill{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width:100%;
+}
+
+.nav-right{
+    display: flex;
+    width: 300px;
+}
+
+@media screen and (max-width: 425px) {
+    .nav-left{
+        width: auto;
+    }
 }
