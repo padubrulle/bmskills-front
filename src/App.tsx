@@ -9,7 +9,7 @@ import { AdminAddRecruiter } from './views/admin/recruiters/AdminAddRecruiter';
 import { UserLoginPage } from './views/login/UserLoginPage';
 import { MainLayout } from './views/main/MainLayout';
 import { SkillListPage } from './views/skills/SkillListPage';
-import { HomePage } from './views/Homepage';
+import { HomePage } from './views/HomePage';
 
 const router = createBrowserRouter([
   {
