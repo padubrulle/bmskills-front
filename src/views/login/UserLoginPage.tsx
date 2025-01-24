@@ -46,7 +46,7 @@ export function UserLoginPage() {
         setUser(user => ({...user, ...updatedValue }));
     }
 
-    return <div className="adminForm">
+    return <div className="admin-form">
         <form onSubmit={handleSubmit}>
             <LoginFormTitle title="Connexion" />
             <LoginFormInput fieldName="email" type="text" text="Email" onChange={(event) => handleChange(event, 'email')} />
