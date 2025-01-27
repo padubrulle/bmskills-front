@@ -42,9 +42,6 @@ export function SkillListPage(){
         const combinedSkills = categories.map((cat) => {
           const filteredSkills = data.filter((skill) => skill.category_id === cat.id);
 
-          if(filteredSkills.length===0){
-            return <EmptySkillByCategoryContainer key={cat.id} category={cat} />
-          }
           return <SkillByCategoryContainer key={cat.id} category={cat} skills={filteredSkills} />;
         });
         setSkillsByCategory(combinedSkills);

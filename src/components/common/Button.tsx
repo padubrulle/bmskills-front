@@ -1,5 +1,3 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react"
-
 
 interface ButtonProps {
     type?: 'submit' | 'reset' | 'button',
@@ -11,7 +9,6 @@ interface ButtonProps {
  * @param {string} type
  * @param {string} value 
  * @param {string} className 
-
  */
 export function Button({type, value, className}: ButtonProps){
     return <div>
