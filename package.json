@@ -2,7 +2,6 @@
   "name": "bmskills-front",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://padubrulle.github.io/bmskills-front",
   "type": "module",
   "scripts": {
     "dev": "vite",
