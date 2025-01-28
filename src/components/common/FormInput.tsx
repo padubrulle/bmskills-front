@@ -1,13 +1,19 @@
+import { ChangeEventHandler } from "react"
+
 interface FormInputProps{
-    fieldName: string,
-    text: string,
-    type: string,
-    required?: boolean,
-    onChange: (value: string) => void
+    fieldName: string;
+    text: string;
+    type: string;
+    required?: boolean;
+    onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
 /**
- * @param {string} placeholder 
+ * @param {string} fieldName 
+ * @param {string} text 
+ * @param {string} type 
+ * @param {boolean} required 
+ * @param {ChangeEventHandler<HTMLInputElement>} onChange 
  */
 export function FormInput({fieldName, text, type, required=false, onChange}: FormInputProps){
     return <div style={{paddingTop: "3%"}}>

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { LoginButton } from "../../admin/LoginButton";
 import { LoginFormInput } from "../../admin/LoginFormInput";
 import { LoginFormTitle } from "../../components/common/LoginFormTitle";
-import '../../components/style/_login.css'
 import { setCookie } from "../../security/CookieProvider";
 
+import '../../components/style/_login.css'
 
 export function UserLoginPage() {
 
@@ -13,7 +13,7 @@ export function UserLoginPage() {
         password: ""
     })
 
-    function handleSubmit(event){
+    function handleSubmit(event: FormEvent<HTMLFormElement>){
         event.preventDefault();
         const requestOptions = {
             method: 'POST',
@@ -41,7 +41,7 @@ export function UserLoginPage() {
     }
 
 
-    function handleChange(event, objProp){
+    function handleChange(event: ChangeEvent<HTMLInputElement>, objProp:string){
         let updatedValue = { [objProp]: event.target.value };
         setUser(user => ({...user, ...updatedValue }));
     }
