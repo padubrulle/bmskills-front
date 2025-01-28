@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import { SkillPage } from './views/skills/SkillPage';
 import { AdminLoginPage } from './views/login/AdminLoginPage';
@@ -11,7 +11,7 @@ import { MainLayout } from './views/main/MainLayout';
 import { SkillListPage } from './views/skills/SkillListPage';
 import { HomePage } from './views/HomePage';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <MainLayout pageContent={<HomePage />} />
@@ -51,11 +51,7 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
 

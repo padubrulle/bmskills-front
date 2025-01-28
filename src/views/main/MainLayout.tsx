@@ -9,7 +9,7 @@ interface MainLayoutProps{
 export function MainLayout({pageContent}: MainLayoutProps): ReactElement{
     return <>
         <Header />
-        {pageContent}
+        <main>{pageContent}</main>
         <Footer />
     </>
 }
