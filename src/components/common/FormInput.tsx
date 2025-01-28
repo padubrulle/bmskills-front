@@ -1,7 +1,15 @@
+interface FormInputProps{
+    fieldName: string,
+    text: string,
+    type: string,
+    required?: boolean,
+    onChange: (value: string) => void
+}
+
 /**
  * @param {string} placeholder 
  */
-export function FormInput({fieldName, text, type, required=false, onChange}){
+export function FormInput({fieldName, text, type, required=false, onChange}: FormInputProps){
     return <div style={{paddingTop: "3%"}}>
     <div className="input-group">
             <input className="input" 

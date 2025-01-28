@@ -1,4 +1,4 @@
-import { createBrowserRouter, NavLink, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { SkillPage } from './views/skills/SkillPage';
 import { AdminLoginPage } from './views/login/AdminLoginPage';
