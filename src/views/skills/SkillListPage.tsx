@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { SkillByCategoryContainer } from "../../components/category/SkillByCategoryContainer";
-import { EmptySkillByCategoryContainer } from "../../components/category/EmptySkillByCategoryContainer";
+import { ISkill } from "../../interfaces/ISkill";
+import { ICategory } from "../../interfaces/ICatergory";
 
 export function SkillListPage(){
     const observer = new IntersectionObserver((entries) => {
@@ -20,8 +21,8 @@ export function SkillListPage(){
     })
       
     const [data, setData] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [skillsByCategory, setSkillsByCategory] = useState([]);
+    const [categories, setCategories] = useState<ICategory[]>([]);
+    const [skillsByCategory, setSkillsByCategory] = useState<ReactElement[]>([]);
 
     useEffect(() => {
       fetch('http://localhost:5000/category')
@@ -39,8 +40,8 @@ export function SkillListPage(){
 
     useEffect(() => {
       if (categories.length > 0 && data.length > 0) {
-        const combinedSkills = categories.map((cat) => {
-          const filteredSkills = data.filter((skill) => skill.category_id === cat.id);
+        const combinedSkills: ReactElement[] = categories.map((cat: ICategory) => {
+          const filteredSkills = data.filter((skill: ISkill) => skill.category_id === cat.id);
 
           return <SkillByCategoryContainer key={cat.id} category={cat} skills={filteredSkills} />;
         });

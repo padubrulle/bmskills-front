@@ -1,8 +1,12 @@
 import { Header } from "../common/Header";
 import { Footer } from "../common/Footer";
-import { SkillListPage } from "./SkillListPage";
+import { ReactElement } from "react";
 
-export function MainLayout({pageContent}){
+interface MainLayoutProps{
+    pageContent: ReactElement;
+}
+
+export function MainLayout({pageContent}: MainLayoutProps): ReactElement{
     return <>
         <Header />
         {pageContent}

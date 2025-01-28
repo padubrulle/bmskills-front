@@ -1,15 +1,20 @@
-import { Link, NavLink } from 'react-router-dom'
-import '../style/_skills.css'
 import { ReactElement } from "react"
+import { NavLink } from 'react-router-dom'
+
+import { ISkill } from "../../interfaces/ISkill"
+
+
+import '../style/_skills.css'
+
+interface SkillCardProps{
+    skill: ISkill;
+}
 
 /**
- * Une carte de skill pour un PLP
- * @param {string} name
- * @param {string} description
- * @param {number} base_price
- * @param {string} img_url
+ * Une carte de skill pour une PLP
+ * @param {ISkill} skill
  */
-export function SkillCard({skill}): ReactElement{
+export function SkillCard({skill}: SkillCardProps): ReactElement{
     return  <div className="card">
         <NavLink to={`/skill/${skill.id}`}>
             <div className='card-img'>

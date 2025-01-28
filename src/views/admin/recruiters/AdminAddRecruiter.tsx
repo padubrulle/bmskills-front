@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { FormInput } from "../../../components/common/FormInput";
 import { AdminNavbar } from "../../../components/navbar/admin/navbar";
 
 
 export function AdminAddRecruiter() {
     const [recruiter, setTalent] = useState({
-        email: "",
-        password: "",
-        first_name: "",
-        last_name: "",
-        job_title: ""
+        email: '',
+        password: '',
+        first_name: '',
+        last_name: '',
+        job_title: ''
     });
 
-    function handleSubmit(event){
+    function handleSubmit(event: FormEvent<HTMLFormElement>){
         event.preventDefault()
         const requestOptions = {
             method: 'POST',
@@ -31,7 +31,7 @@ export function AdminAddRecruiter() {
         .then(async (response) => console.log(await response.json()))
     }
 
-    function handleChange(event, objProp) {
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>, objProp: string) {
         let updatedValue = { [objProp]: event.target.value };
         setTalent(recruiter => ({...recruiter, ...updatedValue }));
     }

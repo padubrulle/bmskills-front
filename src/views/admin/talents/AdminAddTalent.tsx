@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { FormInput } from "../../../components/common/FormInput";
 import { AdminNavbar } from "../../../components/navbar/admin/navbar";
 
@@ -11,7 +11,7 @@ export function AdminAddTalent() {
         last_name: ""
     });
 
-    function handleSubmit(event){
+    function handleSubmit(event: FormEvent<HTMLFormElement>){
         event.preventDefault()
         const requestOptions = {
             method: 'POST',
@@ -29,7 +29,7 @@ export function AdminAddTalent() {
         .then(async (response) => console.log(await response.json()))
     }
 
-    function handleChange(event, objProp) {
+    function handleChange(event: ChangeEvent<HTMLInputElement>, objProp: string) {
         let updatedValue = { [objProp]: event.target.value };
         setTalent(talent => ({...talent, ...updatedValue }));
     }
